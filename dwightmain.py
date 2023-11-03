@@ -18,7 +18,7 @@ cg = CoinGeckoAPI()
 bot = commands.Bot(command_prefix='$', intents=default_intents)
 bot = commands.Bot(command_prefix='!', intents=default_intents)
 
-response = requests.get("https://newsapi.org/v2/everything?q=crypto&apiKey= {a81da3c5c51943e7b06d457559104185}")
+response = requests.get("https://newsapi.org/v2/everything?q=crypto&apiKey= {YOUR API}")
 def get_crypto_chart(token):
     chart_data = cg.get_coin_market_chart_by_id(id=f'{token}', vs_currency='chf', days='7')
 
@@ -205,7 +205,7 @@ $eth
     elif message.content.startswith('!news'):
         url = ('https://newsapi.org/v2/top-headlines?'
         'country=fr&'
-        'apiKey=a81da3c5c51943e7b06d457559104185')
+        'apiKey={YOUR API}')
 
         response = requests.get(url)
         if response.status_code == 200:
@@ -243,4 +243,4 @@ $eth
 
         
 
-bot.run("MTE2ODgyOTMzNDI3NDk2OTYxMA.GeKb5G.RmS2ivFVHu1O5Jps2RN38Z_agK3Cez4xaIC3QY")
+bot.run("YOUR TOKEN")
